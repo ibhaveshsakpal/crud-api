@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = require("./router");
 const dotenv = require("dotenv").config();
 
-const port = 8000;
+const PORT = process.env.PORT || 8000;
 
 const app = express();
 
@@ -21,6 +21,6 @@ mongoose
 
 app.use(router);
 
-app.listen(port, async()=> {
-    console.log(`Server running on port ${port}`);
+app.listen(PORT, async()=> {
+    console.log(`Server running on port ${PORT}`);
 })
